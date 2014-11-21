@@ -54,7 +54,7 @@ LED.prototype.flash = function(cb) {
   this.state = 'flash';
   var self = this;
   this.turnOff(function() {
-    self._emit(100, 750); 
+    self._emitLight(100, 750); 
   });
   cb();
 };
@@ -74,14 +74,14 @@ LED.prototype._pattern = function(onDuration, offDuration, state, cb) {
     if (onDuration === Infinity || offDuration === 0) {
       bone.digitalWrite(self.pin, 1);
     } else {
-      self._timer = setInterval(self._emit.bind(self, onDuration), onDuration + offDuration);
+      self._timer = setInterval(self._emitLight.bind(self, onDuration), onDuration + offDuration);
     }
     self.state = state;
     cb();
   });
 };
 
-LED.prototype._emit = function(delay) {
+LED.prototype._emitLight = function(delay) {
   var self = this;
   
   bone.digitalWrite(this.pin, 1, function() {
