@@ -1,8 +1,8 @@
 {
   "name": "zetta-led-bonescript-driver",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "LED Device for use in Zetta on the BeagleBone",
-  "main": "examples/server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
